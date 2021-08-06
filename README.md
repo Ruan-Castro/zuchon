@@ -1,2 +1,2 @@
 # zuchon
- HelpDesk open source liberado pela licença MIT. Favor não vender.
+ HelpDesk open source liberado pela licença MIT.
