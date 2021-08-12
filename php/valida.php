@@ -15,12 +15,19 @@ if(!empty($_POST)){
 		if($resultado_usuario){
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 			if($senha==$row_usuario['senha']){
+				
+
 				$_SESSION['ID'] = $row_usuario['ID'];
 				$_SESSION['nome'] = $row_usuario['nome'];
 				$_SESSION['usuario'] = $row_usuario['usuario'];
 				$_SESSION['sexo'] = $row_usuario['sexo'];
 				$_SESSION['NA'] = $row_usuario['NA'];
 				$_SESSION['setor'] = $row_usuario['setor'];
+				if($_SESSION['sexo']==0){ $sexo='o'; }
+				if($_SESSION['sexo']==1){ $sexo='a'; }
+				if($_SESSION['sexo']==2){ $sexo='e'; }
+				$_SESSION['msg'] = "<center id='aviso'>Bem vind".$sexo." ".$_SESSION['nome']."</center>";
+				
 				header("Location: ../paginas/index.php");
 			}else{
 				$_SESSION['msg'] = "<center id='aviso'>Login e/ou Senha incorreto!</center>";

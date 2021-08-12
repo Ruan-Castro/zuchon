@@ -1,3 +1,10 @@
+@font-face {
+   font-family: Poppins-Regular;
+   src: url(../fontes/poppins/Poppins-Regular.ttf);
+   font-family: Poppins-Bold;
+   src: url(../fontes/poppins/Poppins-Bold.ttf);
+}
+
 *{
 	padding: 0;
 	margin: 0;
@@ -5,152 +12,89 @@
 }
 body{
 	overflow-x: hidden;
-	font-family: Arial;
-}
-.centro tr th,table.centro tr td,table{
-	text-align: center;
-	padding: 10px 20px;
+	font-family: Poppins-Regular;
 }
 #aviso{
-	top: 150px;
-	color: #FFF;
+	top: 0px;
+	color: #000;
 	text-align: center;
-	background-color: #A22; 
+	background-color: #E5E5E5; 
 	padding: 10px;
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 9999;
+	width: 100%;
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 9999;
 }
-.elevation{
-	-webkit-box-shadow: 5px 5px 5px 5px rgba(50, 50, 50, 0.5);
-	-moz-box-shadow:    5px 5px 5px 5px rgba(50, 50, 50, 0.5);
-	box-shadow:         5px 5px 5px 5px rgba(50, 50, 50, 0.5);
-}
-.elevationmd{
-	-webkit-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.3);
-	-moz-box-shadow:    3px 3px 3px 3px rgba(50, 50, 50, 0.3);
-	box-shadow:         3px 3px 3px 3px rgba(50, 50, 50, 0.3);
-}
-#listagem1{
-	padding: 40px;
-}
-#listagem2{
-	padding: 50px 400px;
+.filtro{
+	border-radius: 100%;
+	width: 25px;
+	height: 25px;
+	outline: none;
+	border: none;
 }
 
-/* listagem usuario */
-#listagem3{
-	padding: 50px 200px;
-}
-/* Fim listagem usuario */
-
-#theme{
-	background-color: #A22;
-	color: white;
-}
-/* Table Principal */
-th{
-	padding: 20px;
-}
-td{
-	padding: 0.5%;
-}
-table.exe4{
-    border-collapse: collapse;
-    width: 100%;
-}
-table.exe4 tr:nth-child(even){
-    background-color:white;
-}
-table.exe4 tr:nth-child(odd){
-    background-color:#f2f2f2;
-}
-table.exe4 tr:hover{
-    background-color:rgba(180,20,20,0.8);
-    color: #FFF;
-}
-table#exe4{
-    border-collapse: collapse;
-    width: 100%;
-}
-table#exe4 tr:nth-child(even){
-    background-color:white;
-}
-table#exe4 tr:nth-child(odd){
-    background-color:#f2f2f2;
-}
-table#exe4 tr:hover{
-    background-color:rgba(180,20,20,0.8);
-    color: #FFF;
-}
-.centro thead tr th,table.centro tbody tr td,table{
-	text-align:center;
-}
-.bordered>thead>tr,table.bordered>tbody>tr{
-	border-bottom:1px solid #d0d0d0;
-}
-title{
-	border-color: #b30000;
-	font-size: 18px;
-}
-/* Barra de rolagem */
-::-webkit-scrollbar {
-  width: 10px;
-}
-/* Barra de rolagem */
-::-webkit-scrollbar-thumb {
-  background: #A22;
-}
-/* Barra de rolagem */
-::-webkit-scrollbar-thumb:hover {
-  background: red; 
-}
-
-/* Background animado */
-.text {
-	font-family: Arial;
-	font-weight: 700;
-	font-size: 5rem;
-	color: #fff;
-	border: 3px solid #fff;
-	padding: 2rem 4rem;
-}
-.gradient {
+.fundo {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
 	width: 100vw;
-	/* Colors generated on: https://colorhunt.co/palette/7579e79ab3f5a3d8f4b9fffc */
-	background: -webkit-linear-gradient(-135deg, #7579E7, #B9FFFC);
-	background: -o-linear-gradient(-135deg, #7579E7, #B9FFFC);
-	background: -moz-linear-gradient(-135deg, #7579E7, #B9FFFC);
-	background: linear-gradient(-135deg, #7579E7, #B9FFFC);
+	background: #EEEEEE;
 	background-size: 100%;
 }
 
-@keyframes colors {
-	0% {
-		background-position: 0% 50%;
-    }
-    50% {
-		background-position: 100% 50%;
-    }
-    100% {
-    	background-position: 0% 50%;
-	}
+/* Header */
+
+.bnt{
+	background: #CFCFCF;
+	outline: none;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 16px;
+	font-family: Poppins-Bold;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 2px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 2px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 2px rgba(50, 50, 50, 0.3);
+}
+.bnt:hover{
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 0px 0px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 0px 0px 0px rgba(50, 50, 50, 0.3);
+}
+/* Cor dos Filtros*/
+.corr{
+	background: #A22;
+}
+.cory{
+	background: #DFFF00;
+}
+.corg{
+	background: #008000;
 }
 
+.filtro{
+	cursor: pointer;
+	margin: 7px;
+}
+.direita{
+	margin-right: 100px;
+}
+.esquerda{
+	margin-left: 100px;
+}
+header{
+	background: silver;
+	padding: 4rem 0;
+	text-align: center;
+	width: 100%;
+	height: 20%;
+	position: fixed;
+}
 @media (max-width: 600px) {
 	.text {
 		font-size: 1.5rem;
 		padding: 1rem 2rem;
 	}
 }
-/*
- 	-webkit-box-shadow: 0 2px 10px rgb(20 21 24 / 35%);
-	-moz-box-shadow: 0 2px 10px rgba(20,21,24,.35);
-	-ms-box-shadow: 0 2px 10px rgba(20,21,24,.35);
-	-o-box-shadow: 0 2px 10px rgba(20,21,24,.35);
-	box-shadow: 0 2px 10px rgb(20 21 24 / 35%);
-*/
