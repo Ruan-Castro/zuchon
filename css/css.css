@@ -4,6 +4,13 @@
    font-family: Poppins-Bold;
    src: url(../fontes/poppins/Poppins-Bold.ttf);
 }
+:root {
+    --dark-blue: #363f5f;
+    --green: #49AA26;
+    --light-green: #3dd705;
+    --red: #e92929;
+
+}
 
 *{
 	padding: 0;
@@ -12,7 +19,7 @@
 }
 body{
 	overflow-x: hidden;
-	font-family: Poppins-Regular;
+	font-family: 'Poppins', sans-serif;
 }
 #aviso{
 	top: 0px;
@@ -45,6 +52,44 @@ body{
 }
 
 /* Header */
+.btn-cad {
+    width: 100%;
+    height: 50px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background: var(--green);
+    padding: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn-cad:hover {
+    background: var(--light-green);
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+.button.cancel {
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.25rem;
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
+}
 
 .bnt{
 	background: #CFCFCF;
@@ -92,6 +137,78 @@ header{
 	height: 20%;
 	position: fixed;
 }
+
+/* Modal ===================== */
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.7);
+
+    position: fixed;
+    top: 0;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #F0F2f5;
+    padding: 2.4rem;
+
+    position: relative;
+    z-index: 1;
+}
+
+input {
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group .help{
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+}
+
+
+/* Form ===================== */
+#form {
+    max-width: 500px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
 @media (max-width: 600px) {
 	.text {
 		font-size: 1.5rem;
