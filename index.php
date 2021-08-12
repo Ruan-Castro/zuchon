@@ -22,7 +22,7 @@ session_start();
 			<img src="imagens/runatecnologiacriativa.png" class="tamanho-logo" />
 		</div>
 		<div class="dados-login">
-			<form method="POST" action="./controlador/valida.php" class="px-4 py-3">
+			<form method="POST" action="./php/valida.php" class="px-4 py-3">
 			  	<center><h1>Login de Usuário</h1></center>
 			    <div class="formulario01">
 					<input type="text" name="usuario" placeholder="Usuário">

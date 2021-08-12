@@ -6,13 +6,10 @@ if(!empty($_SESSION['ID'])){
 <head>
   <title>Gestão de Contratos</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap413.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- CSS apenas -->
-  <link rel="shortcut icon" href="imagens/icon.ico" />
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link rel="shortcut icon" href="../imagens/icon.ico" />
+  <link rel="stylesheet" type="text/css" href="../css/css.css">
 </head>
 <body class="gradient">
 	<?php
@@ -23,7 +20,7 @@ if(!empty($_SESSION['ID'])){
 	?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light elevation">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#"><img src="imagens/grupocarmais.png" width="150px"></a>
+		<a class="navbar-brand" href="#"><img src="../imagens/grupocarmais.png" width="150px"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     	<span class="navbar-toggler-icon"></span>
 		</button>
@@ -44,7 +41,7 @@ if(!empty($_SESSION['ID'])){
 					    	<li><a href="listar_empresasventura.php">Listar Existentes</a></li>
 					    	<li><a href="cadastro_empresasventura.php">Cadastrar Nova</a></li>
 					<?php
-						if ($_SESSION['tipo_usuario']==2) {
+						if ($_SESSION['NA']==5) {
 							
 					?> 
 						<li class="divider"></li>
@@ -58,8 +55,10 @@ if(!empty($_SESSION['ID'])){
 			</div>
 		</div>
     <form class="form-inline my-2 my-lg-0">
-		<center>Bem vindo<br> <b><?php echo $_SESSION['nome'] ?>!</b>
-		<a href="sair.php"><img src="imagens/sair.png" height="20px" width="20px"></a></center>
+		<center>
+			Bem vind<?php if($_SESSION['sexo']==0){ echo 'o'; } if($_SESSION['sexo']==1){ echo 'a'; } if($_SESSION['sexo']==2){ echo 'x'; } ?>
+			<b><?php echo $_SESSION['nome'] ?>!</b>
+		<a href="../php/sair.php"><img src="../imagens/sair.png" height="20px" width="20px"></a></center>
 	</form>
 	</div>
 </nav>

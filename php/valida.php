@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "php/conexao.php";
+require_once "conexao.php";
 
 if(!empty($_POST)){
 	$usuario = $_POST['usuario'];
@@ -10,7 +10,7 @@ if(!empty($_POST)){
 		//Gerar a senha criptografa
 		//echo password_hash($senha, PASSWORD_DEFAULT);
 		//Pesquisar o usuário no BD
-		$result_usuario = "SELECT ID, nome,usuario, senha, email, tipo_usuario FROM USUARIOS WHERE usuario='$usuario' LIMIT 1";
+		$result_usuario = "SELECT ID, nome, usuario, sexo, senha, NA, setor FROM usu WHERE usuario='$usuario' LIMIT 1";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		if($resultado_usuario){
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
@@ -18,20 +18,21 @@ if(!empty($_POST)){
 				$_SESSION['ID'] = $row_usuario['ID'];
 				$_SESSION['nome'] = $row_usuario['nome'];
 				$_SESSION['usuario'] = $row_usuario['usuario'];
-				$_SESSION['email'] = $row_usuario['email'];
-				$_SESSION['tipo_usuario'] = $row_usuario['tipo_usuario'];
-				header("Location: inicio.php");
+				$_SESSION['sexo'] = $row_usuario['sexo'];
+				$_SESSION['NA'] = $row_usuario['NA'];
+				$_SESSION['setor'] = $row_usuario['setor'];
+				header("Location: ../paginas/index.php");
 			}else{
 				$_SESSION['msg'] = "<center id='aviso'>Login e/ou Senha incorreto!</center>";
-				header("Location: index.php");
+				header("Location: ../index.php");
 			}
 		}
 	}else{
-		$_SESSION['msg'] = "<center id='aviso'>Login e senha incorreto!</center>";
-		header("Location: index.php");
+		$_SESSION['msg'] = "<center id='aviso'>Login e Senha incorretos!</center>";
+		header("Location: ../index.php");
 	}
 }else{
 	$_SESSION['msg'] = "<center id='aviso'>Página não encontrada</center>";/* Erro de validação */
-	header("Location: index.php");
+	header("Location: ../index.php");
 }
 ?>

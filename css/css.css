@@ -122,9 +122,11 @@ title{
 	height: 100vh;
 	width: 100vw;
 	/* Colors generated on: https://colorhunt.co/palette/7579e79ab3f5a3d8f4b9fffc */
-	background: linear-gradient(60deg, #B9FFFC, #A3D8F4, #9AB3F5, #7579E7);
-	background-size: 300% 300%;
-	animation: colors 10s ease infinite;
+	background: -webkit-linear-gradient(-135deg, #7579E7, #B9FFFC);
+	background: -o-linear-gradient(-135deg, #7579E7, #B9FFFC);
+	background: -moz-linear-gradient(-135deg, #7579E7, #B9FFFC);
+	background: linear-gradient(-135deg, #7579E7, #B9FFFC);
+	background-size: 100%;
 }
 
 @keyframes colors {
