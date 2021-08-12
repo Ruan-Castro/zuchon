@@ -55,8 +55,7 @@ if(!empty($_SESSION['ID'])){
 			</div>
 		</div>
     <form class="form-inline my-2 my-lg-0">
-		<center>
-			Bem vind<?php if($_SESSION['sexo']==0){ echo 'o'; } if($_SESSION['sexo']==1){ echo 'a'; } if($_SESSION['sexo']==2){ echo 'x'; } ?>
+		<center>Bem vind<?php if($_SESSION['sexo']==0){ echo 'o'; } if($_SESSION['sexo']==1){ echo 'a'; } if($_SESSION['sexo']==2){ echo 'x'; } ?>
 			<b><?php echo $_SESSION['nome'] ?>!</b>
 		<a href="../php/sair.php"><img src="../imagens/sair.png" height="20px" width="20px"></a></center>
 	</form>
