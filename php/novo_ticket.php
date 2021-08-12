@@ -6,7 +6,7 @@ $resumo=$_POST['resumo'];
 $solicitacao=$_POST['solicitacao'];
 $usuario=$_SESSION['ID'];
 
-$incluir_ticket = "INSERT INTO chamado (resumo, solicitacao, DTABERTURA, dtencerramento, tecnico, usuario) VALUES ('$resumo', '$solicitacao', now(), null, null, '$usuario')";
+$incluir_ticket = "INSERT INTO chamado (resumo, solicitacao, DTABERTURA, dtencerramento, tecnico, usuario) VALUES ('$resumo', '$solicitacao', now(), null, null, $usuario)";
 $resultado = mysqli_query($conn, $incluir_ticket);
 
 if(mysqli_insert_id($conn)){
