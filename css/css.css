@@ -19,8 +19,11 @@
 }
 body{
 	overflow-x: hidden;
-    	background: #50514F;
+    background: #50514F;
 	font-family: 'Poppins', sans-serif;
+}
+a{
+	text-decoration: none;
 }
 #aviso{
 	top: 0px;
@@ -148,8 +151,15 @@ th{
 /* Footer */
 footer{
 	text-align: center;
+	padding-top: 40px;
 }
-
+footer a{
+	color: white;
+	text-decoration: none;
+}
+footer a:hover{
+	color: #CECECE;
+}
 /* Modal ===================== */
 .modal-overlay {
     width: 100%;

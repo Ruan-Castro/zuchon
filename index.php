@@ -33,7 +33,7 @@ session_start();
 			    <center>
 			    	<button type="submit" name="login">Entrar</button>
 					<div class="footer">
-						Criado por <a href="https://github.com/Ruan-Castro">Antonio Marcos</a>
+						Criado por <a href="https://github.com/Ruan-Castro" target="_blank">Antonio Marcos</a>
 					</div>
 			    </center>
 	  		</form>
