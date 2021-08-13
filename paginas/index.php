@@ -9,7 +9,7 @@ if(!empty($_SESSION['ID'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Zuchon - HelpDesk</title>
 	<link rel="shortcut icon" href="../imagens/icon.ico" />
-	<link rel="stylesheet" type="text/css" href="../css/css.css">
+	<link rel="stylesheet" type="text/css" href="../css/css2.css">
 </head>
 <body>
 	<?php
@@ -19,7 +19,7 @@ if(!empty($_SESSION['ID'])){
 		}
 	?>
 	<header>
-		<a onclick="Modal.open()" class="bnt direita">ticket+</a>
+		<a onclick="Modal.open()" class="bnt direita"><i class="fa-light fa-ticket"></i></a>
 		<button class="filtro corr"></button>
 		<button class="filtro cory"></button>
 		<button class="filtro corg"></button>
@@ -33,6 +33,7 @@ if(!empty($_SESSION['ID'])){
                     <tr>
                         <th>Ticket</th>
                         <th>Usuário</th>
+                        <th>Setor</th>
                         <th>Resumo</th>
                         <th>Data de Abertura</th>
                         <th>Data de Encerramento</th>
@@ -43,14 +44,88 @@ if(!empty($_SESSION['ID'])){
                     <tr>
                         <td>1</td>
                         <td>Antonio Marcos</td>
-                        <td>Computador parou</td>
+                        <td>T.I.</td>
+                        <td>Perdendo conexão</td>
                         <td>14/10/1999</td>
                         <td></td>
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Antonio Marcos</td>
+                        <td>Rodrigo Cunha</td>
+                        <td>Diretoria</td>
+                        <td>Computador não liga</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Edvânia Rodrigues</td>
+                        <td>RH/DP</td>
+                        <td>VPN no notebook</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Edvânia Rodrigues</td>
+                        <td>RH/DP</td>
+                        <td>Computador parou</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Eduardo Lima</td>
+                        <td>CNC</td>
+                        <td>Computador parou</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Edvânia Rodrigues</td>
+                        <td>RH/DP</td>
+                        <td>Computador parou</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Edvânia Rodrigues</td>
+                        <td>RH/DP</td>
+                        <td>Computador parou</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Edvânia Rodrigues</td>
+                        <td>RH/DP</td>
+                        <td>Computador parou</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Edvânia Rodrigues</td>
+                        <td>RH/DP</td>
+                        <td>Computador parou</td>
+                        <td>14/10/1999</td>
+                        <td></td>
+                        <td>Lane Santos</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Edvânia Rodrigues</td>
+                        <td>RH/DP</td>
                         <td>Computador parou</td>
                         <td>14/10/1999</td>
                         <td></td>
