@@ -19,7 +19,7 @@ if(!empty($_SESSION['ID'])){
 		}
 	?>
 	<header>
-		<button onclick="Modal.open()" class="bnt direita">Ticket +</button>
+		<button onclick="Modal.open()" class="bnt direita">ticket+</button>
 		<button class="filtro corr"></button>
 		<button class="filtro cory"></button>
 		<button class="filtro corg"></button>

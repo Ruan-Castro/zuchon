@@ -19,7 +19,7 @@
 }
 body{
 	overflow-x: hidden;
-    background: #f0f2f5;
+    	background: #50514F;
 	font-family: 'Poppins', sans-serif;
 }
 #aviso{
@@ -43,7 +43,7 @@ body{
 	border: none;
 }
 .container{
-	width: min(90vw, 800px);
+	width: min(90vw, 1200px);
 	margin: auto;
 }
 thead{
@@ -95,17 +95,19 @@ header{
 }
 
 .bnt{
-	background: #CFCFCF;
+	background-color: rgba(0,0,0,0);
+	color: #FFF;
 	outline: none;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 16px;
+	border-width: 2px;
+	border-color: white;
+	padding: 5px 13px;
+	border-radius: 25px;
 	font-family: Poppins-Bold;
 	font-size: 15px;
 	cursor: pointer;
-	-webkit-box-shadow: 0px 2px rgba(50, 50, 50, 0.3);
-	-moz-box-shadow:    0px 2px rgba(50, 50, 50, 0.3);
-	box-shadow:         0px 2px rgba(50, 50, 50, 0.3);
+	-webkit-box-shadow: 3px 5px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    3px 5px rgba(50, 50, 50, 0.3);
+	box-shadow:         3px 5px rgba(50, 50, 50, 0.3);
 }
 .bnt:hover{
 	-webkit-box-shadow: 0px 0px 0px 0px rgba(50, 50, 50, 0.3);
@@ -114,13 +116,13 @@ header{
 }
 /* Cor dos Filtros*/
 .corr{
-	background: #A22;
+	background: #f25f5c;
 }
 .cory{
-	background: #DFFF00;
+	background: #ffe066;
 }
 .corg{
-	background: #008000;
+	background: #70c1b3;
 }
 
 .filtro{
@@ -135,7 +137,7 @@ header{
 }
 /* Main */
 main{
-	background: #CFCFCF;
+	background: #373736;
 	border-radius: 16px;
 	padding: 2rem;
 }
@@ -250,8 +252,8 @@ table tbody tr td:last-child{
 }
 
 table thead th {
-    background: white;
-
+    background: #767875;
+    color: white;
     font-weight: normal;
     padding: 1rem 2rem;
 
@@ -259,11 +261,12 @@ table thead th {
 }
 
 table tbody tr {
-    opacity: 0.7
+	opacity: 1;
+	color: black;
 }
 
 table tbody tr:hover {
-    opacity: 1
+    opacity: 1;
 }
 
 table tbody td {
