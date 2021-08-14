@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Ago-2021 às 22:01
--- Versão do servidor: 10.4.20-MariaDB
--- versão do PHP: 8.0.8
+-- Tempo de geração: 14-Ago-2021 às 04:24
+-- Versão do servidor: 10.4.19-MariaDB
+-- versão do PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,6 +31,7 @@ CREATE TABLE `chamado` (
   `ID` int(11) NOT NULL,
   `RESUMO` varchar(30) NOT NULL,
   `SOLICITACAO` varchar(500) NOT NULL,
+  `PRIORIDADE` varchar(20) NOT NULL,
   `DTABERTURA` datetime NOT NULL,
   `DTENCERRAMENTO` datetime DEFAULT NULL,
   `TECNICO` int(11) DEFAULT NULL,
@@ -41,12 +42,12 @@ CREATE TABLE `chamado` (
 -- Extraindo dados da tabela `chamado`
 --
 
-INSERT INTO `chamado` (`ID`, `RESUMO`, `SOLICITACAO`, `DTABERTURA`, `DTENCERRAMENTO`, `TECNICO`, `USUARIO`) VALUES
-(1, 'TESTE', 'COMPRA DE CABO DE REDE DE TESTE', '2021-08-06 17:10:21', NULL, 1, 1),
-(2, '$resumo', '$solicitacao', '2021-08-12 12:08:09', '2021-08-12 12:09:38', 1, 0),
-(3, 'Oi', 'Teste', '2021-08-12 12:08:39', NULL, NULL, 2),
-(4, 'Hoje tem', 'Miau', '2021-08-12 12:30:51', NULL, NULL, 2),
-(5, 'Teste', 'ticket', '2021-08-12 13:53:02', NULL, NULL, 2);
+INSERT INTO `chamado` (`ID`, `RESUMO`, `SOLICITACAO`, `PRIORIDADE`, `DTABERTURA`, `DTENCERRAMENTO`, `TECNICO`, `USUARIO`) VALUES
+(1, 'TESTE', 'COMPRA DE CABO DE REDE DE TESTE', 'estrategico', '2021-08-06 17:10:21', NULL, 1, 1),
+(2, '$resumo', '$solicitacao', 'trivial', '2021-08-12 12:08:09', '2021-08-12 12:09:38', 1, 0),
+(3, 'Oi', 'Teste', 'trivial', '2021-08-12 12:08:39', NULL, NULL, 2),
+(4, 'Hoje tem', 'Miau', 'trivial', '2021-08-12 12:30:51', NULL, NULL, 2),
+(5, 'Teste', 'ticket', 'tecnico', '2021-08-12 13:53:02', NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
