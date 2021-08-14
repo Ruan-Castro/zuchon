@@ -19,7 +19,7 @@ if(!empty($_SESSION['ID'])){
 		}
 	?>
 	<header>
-		<a onclick="Modal.open()" class="bnt direita"><i class="fa-light fa-ticket"></i></a>
+		<a onclick="Modal.open()" class="bnt direita">Ticket +</a>
 		<button class="filtro corr"></button>
 		<button class="filtro cory"></button>
 		<button class="filtro corg"></button>
@@ -30,6 +30,35 @@ if(!empty($_SESSION['ID'])){
 		<section id="transaction">
             <table id="data-table">
                 <thead>
+                    <?php
+                    include_once("../php/conexao.php");
+                    //Receber o número da página
+                    $pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);       
+                    $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+                    
+                    //Setar a quantidade de itens por pagina
+                    $qnt_result_pg = 10;
+                    
+                    //calcular o inicio visualização
+                    $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+                    
+                    $result_usuarios = "
+                    SELECT
+                        Ticket=A.ID,
+                        Tecnico=B.NOME,
+                        Usuario=B.NOME,
+                        A.EMAIL,
+                        B.tipo_de_usuario
+                      FROM
+                        chamado A
+                    INNER JOIN usu B ON B.ID=A.USUARIO
+                     LIMIT
+                        $inicio,
+                        $qnt_result_pg";
+                    $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+                    while($row_usuario = mysqli_fetch_assoc($resultado_usuarios)){
+                        ?>
+                        
                     <tr>
                         <th>Ticket</th>
                         <th>Usuário</th>
@@ -39,10 +68,11 @@ if(!empty($_SESSION['ID'])){
                         <th>Data de Encerramento</th>
                         <th>Técnico</th>
                     </tr>
+                    <?php } ?>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <td class="trivial">1</td>
                         <td>Antonio Marcos</td>
                         <td>T.I.</td>
                         <td>Perdendo conexão</td>
@@ -51,7 +81,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <td class="tecnico">2</td>
                         <td>Rodrigo Cunha</td>
                         <td>Diretoria</td>
                         <td>Computador não liga</td>
@@ -60,7 +90,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <td class="trivial">3</td>
                         <td>Edvânia Rodrigues</td>
                         <td>RH/DP</td>
                         <td>VPN no notebook</td>
@@ -69,7 +99,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>4</td>
+                        <td class="estrategico">4</td>
                         <td>Edvânia Rodrigues</td>
                         <td>RH/DP</td>
                         <td>Computador parou</td>
@@ -78,7 +108,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>5</td>
+                        <td class="trivial">5</td>
                         <td>Eduardo Lima</td>
                         <td>CNC</td>
                         <td>Computador parou</td>
@@ -87,7 +117,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>6</td>
+                        <td class="tecnico">6</td>
                         <td>Edvânia Rodrigues</td>
                         <td>RH/DP</td>
                         <td>Computador parou</td>
@@ -96,7 +126,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>7</td>
+                        <td class="trivial">7</td>
                         <td>Edvânia Rodrigues</td>
                         <td>RH/DP</td>
                         <td>Computador parou</td>
@@ -105,7 +135,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>8</td>
+                        <td class="tecnico">8</td>
                         <td>Edvânia Rodrigues</td>
                         <td>RH/DP</td>
                         <td>Computador parou</td>
@@ -114,7 +144,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>9</td>
+                        <td class="trivial">9</td>
                         <td>Edvânia Rodrigues</td>
                         <td>RH/DP</td>
                         <td>Computador parou</td>
@@ -123,7 +153,7 @@ if(!empty($_SESSION['ID'])){
                         <td>Lane Santos</td>
                     </tr>
                     <tr>
-                        <td>10</td>
+                        <td class="trivial">10</td>
                         <td>Edvânia Rodrigues</td>
                         <td>RH/DP</td>
                         <td>Computador parou</td>

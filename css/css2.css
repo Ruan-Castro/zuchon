@@ -270,11 +270,24 @@ table tbody tr {
 	color: black;
 }
 
-table tbody tr:hover {
-    opacity: 1;
+table tbody td{
+    background: white;
+    color: black;
+    padding: 1rem 2rem;
 }
-
-table tbody td {
-    background:white;
+table tbody tr .trivial{
+    background: #70c1b3;
+    color: black;
+    padding: 1rem 2rem;
+    opacity: 0.8;
+}
+table tbody tr .tecnico{
+    background: #ffe066;
+    color: black;
+    padding: 1rem 2rem;
+}
+table tbody tr .estrategico{
+    background: #f25f5c;
+    color: white;
     padding: 1rem 2rem;
 }
