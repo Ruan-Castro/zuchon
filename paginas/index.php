@@ -30,6 +30,17 @@ if(!empty($_SESSION['ID'])){
 		<section id="transaction">
             <table id="data-table">
                 <thead>
+                    <tr>
+                        <th>Ticket</th>
+                        <th>Usuário</th>
+                        <th>Setor</th>
+                        <th>Resumo</th>
+                        <th>Data de Abertura</th>
+                        <th>Data de Encerramento</th>
+                        <th>Técnico</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <?php
                     include_once("../php/conexao.php");
                     //Receber o número da página
@@ -44,123 +55,34 @@ if(!empty($_SESSION['ID'])){
                     
                     $result_usuarios = "
                     SELECT
-                        Ticket=A.ID,
-                        Tecnico=B.NOME,
-                        Usuario=B.NOME,
-                        A.EMAIL,
-                        B.tipo_de_usuario
+                        A.ID,
+                        A.PRIORIDADE,
+                        B.NOME,
+                        A.RESUMO,
+                        A.DTABERTURA,
+                        A.DTENCERRAMENTO,
+                        C.TECNICO,
+                        D.NOMESETOR
                       FROM
                         chamado A
-                    INNER JOIN usu B ON B.ID=A.USUARIO
-                     LIMIT
-                        $inicio,
-                        $qnt_result_pg";
+                    INNER JOIN usu B ON A.USUARIO=B.ID
+                    INNER JOIN Tecnicos C ON A.TECNICO=C.ID
+                    INNER JOIN setor D ON B.setor=D.codsetor
+                    ";
                     $resultado_usuarios = mysqli_query($conn, $result_usuarios);
                     while($row_usuario = mysqli_fetch_assoc($resultado_usuarios)){
                         ?>
                         
                     <tr>
-                        <th>Ticket</th>
-                        <th>Usuário</th>
-                        <th>Setor</th>
-                        <th>Resumo</th>
-                        <th>Data de Abertura</th>
-                        <th>Data de Encerramento</th>
-                        <th>Técnico</th>
+                        <td class="<?php echo $row_usuario['PRIORIDADE'];?>"><?php echo $row_usuario['ID'];?></td>
+                        <td><?php echo $row_usuario['NOME'];?></td>
+                        <td><?php echo $row_usuario['NOMESETOR']; ?></td>
+                        <td><?php echo $row_usuario['RESUMO'];?></td>
+                        <td><?php echo $row_usuario['DTABERTURA'];?></td>
+                        <td><?php echo $row_usuario['DTENCERRAMENTO'];?></td>
+                        <td><?php echo $row_usuario['TECNICO'];?></td>
                     </tr>
                     <?php } ?>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="trivial">1</td>
-                        <td>Antonio Marcos</td>
-                        <td>T.I.</td>
-                        <td>Perdendo conexão</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="tecnico">2</td>
-                        <td>Rodrigo Cunha</td>
-                        <td>Diretoria</td>
-                        <td>Computador não liga</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="trivial">3</td>
-                        <td>Edvânia Rodrigues</td>
-                        <td>RH/DP</td>
-                        <td>VPN no notebook</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="estrategico">4</td>
-                        <td>Edvânia Rodrigues</td>
-                        <td>RH/DP</td>
-                        <td>Computador parou</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="trivial">5</td>
-                        <td>Eduardo Lima</td>
-                        <td>CNC</td>
-                        <td>Computador parou</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="tecnico">6</td>
-                        <td>Edvânia Rodrigues</td>
-                        <td>RH/DP</td>
-                        <td>Computador parou</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="trivial">7</td>
-                        <td>Edvânia Rodrigues</td>
-                        <td>RH/DP</td>
-                        <td>Computador parou</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="tecnico">8</td>
-                        <td>Edvânia Rodrigues</td>
-                        <td>RH/DP</td>
-                        <td>Computador parou</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="trivial">9</td>
-                        <td>Edvânia Rodrigues</td>
-                        <td>RH/DP</td>
-                        <td>Computador parou</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
-                    <tr>
-                        <td class="trivial">10</td>
-                        <td>Edvânia Rodrigues</td>
-                        <td>RH/DP</td>
-                        <td>Computador parou</td>
-                        <td>14/10/1999</td>
-                        <td></td>
-                        <td>Lane Santos</td>
-                    </tr>
                 </tbody>
             </table>
         </section>
