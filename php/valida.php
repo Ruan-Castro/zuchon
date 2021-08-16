@@ -23,10 +23,6 @@ if(!empty($_POST)){
 				$_SESSION['sexo'] = $row_usuario['sexo'];
 				$_SESSION['NA'] = $row_usuario['NA'];
 				$_SESSION['setor'] = $row_usuario['setor'];
-				if($_SESSION['sexo']==0){ $sexo='o'; }
-				if($_SESSION['sexo']==1){ $sexo='a'; }
-				if($_SESSION['sexo']==2){ $sexo='e'; }
-				$_SESSION['msg'] = "<center id='aviso'>Bem vind".$sexo." ".$_SESSION['nome']."</center>";
 				
 				header("Location: ../paginas/index.php");
 			}else{

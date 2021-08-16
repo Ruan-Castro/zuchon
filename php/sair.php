@@ -4,7 +4,6 @@ session_start();
 unset(
 $_SESSION['ID'],
 $_SESSION['nome'],
-$_SESSION['tecnico'],
 $_SESSION['usuario'],
 $_SESSION['sexo'],
 $_SESSION['NA'],

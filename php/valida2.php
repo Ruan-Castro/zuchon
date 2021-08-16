@@ -23,9 +23,6 @@ if(!empty($_POST)){
 				$_SESSION['sexo'] = $row_usuario['sexo'];
 				$_SESSION['NA'] = $row_usuario['NA'];
 				$_SESSION['setor'] = $row_usuario['setor'];
-				if($_SESSION['sexo']==0){ $sexo='o'; }
-				if($_SESSION['sexo']==1){ $sexo='a'; }
-				if($_SESSION['sexo']==2){ $sexo='e'; }
 				
 				header("Location: ../paginas/index2.php");
 			}else{
