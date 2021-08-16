@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!empty($_SESSION['ID'])){
+if($_SESSION['NA']==5){
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,7 +14,6 @@ if(!empty($_SESSION['ID'])){
 <body>
 	<?php
 		if(isset($_SESSION['msg'])){
-			echo $_SESSION['msg'];
 			unset($_SESSION['msg']);
 		}
 	?>
@@ -59,7 +58,6 @@ if(!empty($_SESSION['ID'])){
                         B.NOME,
                         A.RESUMO,
                         A.DTABERTURA,
-                        A.DTENCERRAMENTO,
                         C.TECNICO,
                         D.NOMESETOR
                       FROM
@@ -69,7 +67,6 @@ if(!empty($_SESSION['ID'])){
                     INNER JOIN setor D ON B.setor=D.codsetor
                     WHERE
                         A.DTENCERRAMENTO IS NULL
-                        AND A.usuario='$id_user'
                     ";
                     $resultado_usuarios = mysqli_query($conn, $result_usuarios);
                     while($row_usuario = mysqli_fetch_assoc($resultado_usuarios)){
@@ -95,15 +92,15 @@ if(!empty($_SESSION['ID'])){
         <div class="modal">
             <div id="form">
                 <h2>Novo Ticket</h2>
-                <form action="../php/novo_ticket.php" method="POST">
+                <form action="../php/novo_ticket2.php" method="POST">
                     <div class="input-group">
-                        <label class="sr-only" for="resumo">Resumo</label>
-                        <input type="text" id="resumo" name="resumo" placeholder="Resumo"/>
+                        <label class="sr-only" for="resumo">Resumo *</label>
+                        <input type="text" id="resumo" name="resumo" placeholder="Resumo" required="Resumo" />
                     </div>
 
                     <div class="input-group">
-                        <label class="sr-only" for="solicitacao">Solicitação</label>
-                        <input type="text" id="solicitacao" name="solicitacao" placeholder="Sua solicitação" rowspan="10"/>
+                        <label class="sr-only" for="solicitacao">Solicitação *</label><p>
+                        <textarea class="edit_box" rows="10"  name="solicitacao" placeholder="Sua solicitação" style="width: 600px; height: 150px; margin: 0px;" required="Resumo"></textarea>
                     </div>
 
                     <div class="input-group actions">
@@ -120,6 +117,15 @@ if(!empty($_SESSION['ID'])){
 <?php
 }else{
 	$_SESSION['msg'] = "<center id='aviso'>Área restrita</center>";
+    unset(
+    $_SESSION['ID'],
+    $_SESSION['nome'],
+    $_SESSION['tecnico'],
+    $_SESSION['usuario'],
+    $_SESSION['sexo'],
+    $_SESSION['NA'],
+    $_SESSION['setor']
+    );
 	header("Location: ../index.php");	
 }
 ?>
