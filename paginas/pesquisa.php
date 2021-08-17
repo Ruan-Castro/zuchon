@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['NA']==5 || $_SESSION['ID']==$HELPDESK){
-    $helpdesk=15;
+    $helpdesk=6;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -77,7 +77,7 @@ if($_SESSION['NA']==5 || $_SESSION['ID']==$HELPDESK){
                         ?>
                         
                     <tr>
-                        <td class="<?php echo $row_usuario['PRIORIDADE'];?>"><a href="" <?php if($row_usuario['PRIORIDADE']=="estrategico"){ echo "style='color: white;'";}else{ echo "style='color: black;'";} ?> ><?php echo $row_usuario['ID'];?></a></td>
+                        <td class="<?php echo $row_usuario['PRIORIDADE'];?>"><a href="" <?php if($row_usuario['PRIORIDADE']=="tecnico"){ echo "style='color: white;'";}else{ echo "style='color: black;'";} ?> ><?php echo $row_usuario['ID'];?></a></td>
                         <td><?php echo $row_usuario['NOME'];?></td>
                         <td><?php echo $row_usuario['NOMESETOR']; ?></td>
                         <td><?php echo $row_usuario['RESUMO'];?></td>
@@ -86,7 +86,7 @@ if($_SESSION['NA']==5 || $_SESSION['ID']==$HELPDESK){
                         <td><?php echo $row_usuario['TECNICO'];?></td>
                     </tr>
                     <tr>
-                        <td class="<?php echo $row_usuario['PRIORIDADE'];?>">Solicitação:</td>
+                        <td class="<?php echo $row_usuario['PRIORIDADE'];?>" <?php if($row_usuario['PRIORIDADE']=="tecnico"){ echo "style='color: white;'";}else{ echo "style='color: black;'"; } ?> >Solicitação:</td>
                         <td colspan="6"><?php echo $row_usuario['SOLICITACAO'];?></td>
                     </tr>
                     <?php } ?>

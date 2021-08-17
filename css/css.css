@@ -281,12 +281,12 @@ table tbody tr .trivial{
     padding: 1rem 2rem;
     opacity: 0.8;
 }
-table tbody tr .tecnico{
+table tbody tr .estrategico{
     background: #ffe066;
     color: black;
     padding: 1rem 2rem;
 }
-table tbody tr .estrategico{
+table tbody tr .tecnico{
     background: #f25f5c;
     color: white !important;
     padding: 1rem 2rem;

@@ -76,7 +76,7 @@ if(!empty($_SESSION['ID'])){
                         ?>
                         
                     <tr>
-                        <td class="<?php echo $row_usuario['PRIORIDADE'];?>"><a href="" <?php if($row_usuario['PRIORIDADE']=="estrategico"){ echo "style='color: white;'";}else{ echo "style='color: black;'";} ?> ><?php echo $row_usuario['ID'];?></a></td>
+                        <td class="<?php echo $row_usuario['PRIORIDADE'];?>"><a href="" <?php if($row_usuario['PRIORIDADE']=="tecnico"){ echo "style='color: white;'";}else{ echo "style='color: black;'";} ?> ><?php echo $row_usuario['ID'];?></a></td>
                         <td><?php echo $row_usuario['NOME'];?></td>
                         <td><?php echo $row_usuario['NOMESETOR']; ?></td>
                         <td><?php echo $row_usuario['RESUMO'];?></td>
@@ -97,14 +97,15 @@ if(!empty($_SESSION['ID'])){
                 <h2>Novo Ticket</h2>
                 <form action="../php/novo_ticket.php" method="POST">
                     <div class="input-group">
-                        <label class="sr-only" for="resumo">Resumo</label>
-                        <input type="text" id="resumo" name="resumo" placeholder="Resumo"/>
+                        <label class="sr-only" for="resumo">Resumo *</label>
+                        <input type="text" id="resumo" name="resumo" placeholder="Resumo" required="Resumo" />
                     </div>
 
                     <div class="input-group">
-                        <label class="sr-only" for="solicitacao">Solicitação</label>
-                        <input type="text" id="solicitacao" name="solicitacao" placeholder="Sua solicitação" rowspan="10"/>
+                        <label class="sr-only" for="solicitacao">Solicitação *</label><p>
+                        <textarea class="edit_box" rows="10"  name="solicitacao" placeholder="Sua solicitação" style="width: 600px; height: 150px; margin: 0px;" required="Resumo"></textarea>
                     </div>
+
 
                     <div class="input-group actions">
                         <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
