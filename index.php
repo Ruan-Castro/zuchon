@@ -32,7 +32,7 @@ session_start();
 			    </div>
 			    <center>
 			    	<button type="submit" name="login">Entrar</button>
-						<div class="tecnico-usuario">Técnico? Clique <a href="./index2.php">aqui</a></div>
+					<div class="tecnico-usuario">Técnico? Clique <a href="./index2.php">aqui</a></div>
 					<div class="footer">
 						Criado por <a href="https://github.com/Ruan-Castro" target="_blank">Antonio Marcos</a>
 					</div>
