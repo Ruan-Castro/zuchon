@@ -23,7 +23,7 @@ if($_SESSION['NA']==5 || $_SESSION['ID']==$HELPDESK){
             <a onclick="Modal.open()" class="bnt direita">Ticket +</a>
             <form action="pesquisa.php" method="POST">
                 <input type="text" name="chamado" placeholder="Pesquisar chamado" style="width: 150px; height: 10px; margin-right:0px;" required></input>
-                <button type="submit" name="Enviar" style="width: 30px; height: 30px;"><img src="../imagens/lupa.png"></button>        
+                <button type="submit" name="Enviar">Pesquisar</button>        
             </form>
             <!-- <button class="filtro corr"></button>
             <button class="filtro cory"></button>
